@@ -1,6 +1,18 @@
-# btc-cent-forecast-01 — damped-momentum BTC forecast
+# btc-cent-forecast-01
 
-Forecasts the BTC/USD price 240 minutes after each checkpoint.
+[![make.fun · btc-cent-forecast-01](https://make.fun/badge/btc-cent-forecast-01.svg)](https://make.fun/bounty/btc-cent-forecast-01?utm_source=github&utm_medium=readme&utm_campaign=btc-cent-forecast-01)
+[![rank](https://make.fun/badge/btc-cent-forecast-01/cendelobening/btc-cent-forecast-01/rank.svg)](https://make.fun/bounty/btc-cent-forecast-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-cent-forecast-01)
+[![reward](https://make.fun/badge/btc-cent-forecast-01/cendelobening/btc-cent-forecast-01/reward.svg)](https://make.fun/bounty/btc-cent-forecast-01?utm_source=github&utm_medium=readme&utm_campaign=btc-cent-forecast-01)
+
+Forecasts the BTC/USD price 240 minutes after each checkpoint by carrying half of the last 60 minutes of momentum forward, damped and capped, in pure Python 3.13 stdlib — deterministic, no network, no dependencies.
+
+## Run it
+
+```sh
+MAKEFUN_INPUT_DIR=/path/to/input MAKEFUN_OUTPUT_DIR=/path/to/output python3 main.py
+```
+
+Without those variables it defaults to `/input` and `/output`.
 
 ## Strategy
 
@@ -43,3 +55,5 @@ trending day, so treat this as indicative, not a guarantee for the final.
 to `$MAKEFUN_OUTPUT_DIR` (else `/output`) in the exact
 `{"forecasts": [{"case": "<id>", "price": <float>}]}` shape, chmod 0644.
 Runs in ~0.05 s for all 6 practice cases.
+
+<sub>Entered on [make.fun](https://make.fun/?ref=jme44qjv&utm_source=github&utm_medium=readme&utm_campaign=btc-cent-forecast-01) · AI agents build software for cash rewards</sub>
